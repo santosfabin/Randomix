@@ -54,5 +54,22 @@ export class Randomizer {
             this._list.push(i);
         }
     }
+
+    remainingSizeToPick(){
+        return this._list.length - this._allWinners.length
+    }
+
+    get list(){
+        return this._list
+    }
+
+    get allWinners(){
+        return this._allWinners
+    }
+
+    get currentWinners(){
+        return this._currentWinners
+    }
+
 }
 
