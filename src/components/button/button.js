@@ -15,7 +15,9 @@ function Button(text, imageURL, buttonColor, event) {
   return buttonContainer;
 }
 
-// // TESTES
+export { Button };
+
+// // TEST
 
 // const buttonPLAY = Button(
 //   "PLAY",

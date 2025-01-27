@@ -1,4 +1,4 @@
-function showNotificationError(message) {
+function NotificationError(message) {
   if (document.getElementById("notificationErrorContainer")) {
     document.getElementById("notificationErrorContainer").remove();
   }
@@ -20,3 +20,9 @@ function showNotificationError(message) {
 
   const closeNotificationTimeout = setTimeout(closeNotification, 5 * 1000);
 }
+
+export { NotificationError };
+
+// TEST
+
+// NotificationError("Dados Inválidos!");
