@@ -16,6 +16,3 @@ window.addEventListener("resize", e => {
         removeSlot()
     }
 })
-
-
-
