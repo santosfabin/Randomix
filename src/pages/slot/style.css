@@ -1,3 +1,75 @@
-body{
-    background-color: aqua;
+.itemSlot{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 20px;
 }
+
+.aboveItem{
+    top: -80px
+}
+
+.middleItem{
+    top: 0px
+}
+
+.bellowItem{
+    top: 80px
+}
+
+.showSlotItem{
+    height: 60px;
+    width: 135px;
+    border: 3px solid #FF2E63;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+
+.slotContainerItens{
+    display: flex;
+    gap: 10px;
+    height: fit-content;
+}
+
+.slotContainerButtons{
+    display: flex;
+    gap: 10px;
+    width: fit-content;
+}
+
+.slotContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 150px;
+    width: fit-content;
+    padding: 10px;
+    max-width: 1050px;
+    border-radius: 20px;
+    background-color: #333333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttonSlot{
+    background-color: #FF2E63;
+    color: #ffffff;
+    border: none;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.buttonSlot:hover{
+    cursor: pointer;
+}
+
