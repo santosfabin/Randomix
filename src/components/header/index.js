@@ -1,3 +1,5 @@
+import { customEvent } from "../../utils/customEvent.js";
+
 function Header() {
   const headerContainer = document.createElement("header");
   headerContainer.id = `headerContainer`;
@@ -55,6 +57,8 @@ function redirectSlotPage() {
 
   document.dispatchEvent(toSlotPage);
 }
+
+export { Header };
 
 // TEST
 
