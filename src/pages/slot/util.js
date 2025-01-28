@@ -12,10 +12,10 @@ export function checkScreenSize(size){
     }
 }
 
-export function addSlot(){
-    const windowWidth = window.innerWidth;
+export function addSlot(randomizer){
     const showSlotItensLenght = document.querySelectorAll(".showSlotItem").length
     const remainingSizeToPick = randomizer.remainingSizeToPick()
+    const slotContainerItens = document.getElementsByClassName("slotContainerItens")[0]
     if (remainingSizeToPick <= showSlotItensLenght || checkScreenSize(window.innerWidth) == showSlotItensLenght){
         alert("Não é possível adicionar mais slots")
         return

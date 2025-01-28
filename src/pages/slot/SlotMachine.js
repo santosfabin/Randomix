@@ -18,7 +18,7 @@ export default function SlotMachine(randomizer){
         slotContainerItens.appendChild(ShowItem())
     }
     slotContainerButtons.appendChild(Button(() => {starSorteio(randomizer)}, "Sortear", "buttonStart", "buttonSlot"))
-    slotContainerButtons.appendChild(Button(addSlot, "+", "buttonAddSlot", "buttonSlot"))
+    slotContainerButtons.appendChild(Button(() => {addSlot(randomizer)}, "+", "buttonAddSlot", "buttonSlot"))
     slotContainerButtons.appendChild(Button(removeSlot, "-", "buttonRemoveSlot", "buttonSlot"))
     slotContainerButtons.appendChild(Button(() => {randomizer.resetWinners()}, "Reiniciar", "buttonRestart", "buttonSlot"))
     return slotContainer
