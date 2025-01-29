@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border-bottom: 2px solid black;
+  padding: 10px 40px;
+}
+
+#headerContainer > nav {
+  display: flex;
+  column-gap: 100px;
+}
+
+nav > div {
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+nav > div:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 750px) {
+  #headerContainer {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  #headerContainer > nav {
+    column-gap: 50px;
+  }
+}
+
+@media (max-width: 350px) {
+  #headerContainer > nav {
+    column-gap: 25px;
+  }
+}
