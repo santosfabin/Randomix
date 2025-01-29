@@ -1,6 +1,8 @@
+import { addWinner } from "../../components/winnersList/winnersList.js";
+
 let winnersList = [];
 
-function createScratchCard(scratchQuantity) {
+function createScratchCard() {
   const scratchCard = document.createElement("div");
   scratchCard.id = `scratchCard`;
 
@@ -22,13 +24,6 @@ function createScratchCard(scratchQuantity) {
   scratchSection.id = `scratchSection`;
   mainSection.appendChild(scratchSection);
 
-  for (let i = 0; i < scratchQuantity; i++) {
-    const containerScratch = document.createElement("div");
-    containerScratch.className = `scratchContainer`;
-    containerScratch.addEventListener("click", showWinner);
-    scratchSection.appendChild(containerScratch);
-  }
-
   return scratchCard;
 }
 
@@ -42,5 +37,22 @@ function showWinner() {
   winnerContainer.className = `winnerContainer`;
   this.appendChild(winnerContainer);
 
+  addWinner([winnersList[0]]);
+
   winnersList.splice(0, 1);
 }
+
+function createSratch(randomizer) {
+  const scratchQuantity = randomizer.list;
+
+  winnersList = randomizer.pickValues(scratchQuantity.length);
+
+  for (let i = 0; i < scratchQuantity.length; i++) {
+    const containerScratch = document.createElement("div");
+    containerScratch.className = `scratchContainer`;
+    containerScratch.addEventListener("click", showWinner);
+    document.getElementById("scratchSection").appendChild(containerScratch);
+  }
+}
+
+export { createScratchCard, createSratch };
