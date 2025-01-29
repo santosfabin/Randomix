@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* TEST
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+} */
+
+#containerList {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px 5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+
+#imageContainer {
+  width: 250px;
+  height: 200px;
+  background-image: url("/src/assets/winnersList/trophiesImage.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#listSection {
+  width: 290px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  overflow: auto;
+}
+
+.winnerContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  text-align: center;
+}
+
+.winnerPosition {
+  font-size: 15px;
+}
