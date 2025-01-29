@@ -50,7 +50,7 @@ function starSorteio(randomizer){
     const showSlotItensLenght = document.querySelectorAll(".showSlotItem").length
     const remainingSizeToPick = randomizer.remainingSizeToPick()
     if(!remainingSizeToPick){
-        alert("Sem itens")
+        NotificationError("Sem itens")
         return
     }
     if (showSlotItensLenght > remainingSizeToPick){
@@ -59,7 +59,7 @@ function starSorteio(randomizer){
         }
     }
     if(idInterval){
-        alert("Sorteio Acontecendo")
+        NotificationError("Sorteio Acontecendo")
         return
     }
     const showSlotItens = document.querySelectorAll(".showSlotItem")
