@@ -1,5 +1,7 @@
 import ShowItem from './SlotShow.js'
 
+import {NotificationError} from '../../components/modalError/modalError.js'
+
 export function checkScreenSize(size){
     if(size > 900){
         return 5
@@ -17,7 +19,7 @@ export function addSlot(randomizer){
     const remainingSizeToPick = randomizer.remainingSizeToPick()
     const slotContainerItens = document.getElementsByClassName("slotContainerItens")[0]
     if (remainingSizeToPick <= showSlotItensLenght || checkScreenSize(window.innerWidth) == showSlotItensLenght){
-        alert("Não é possível adicionar mais slots")
+        NotificationError("Não é possível adicionar mais slots")
         return
     }
     slotContainerItens.appendChild(ShowItem())
@@ -27,7 +29,7 @@ export function removeSlot(){
     const showSlotItens = document.querySelectorAll(".showSlotItem")
     const showSlotItensLenght = document.querySelectorAll(".showSlotItem").length
     if(showSlotItensLenght == 1){
-        alert("Não é possível remover mais slots")
+        NotificationError("Não é possível remover mais slots")
         return
     }
     showSlotItens[0].remove()

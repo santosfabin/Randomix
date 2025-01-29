@@ -1,5 +1,6 @@
 import {checkScreenSize, addSlot, removeSlot, lockButtons, unlockButtons} from './util.js'
 import ShowItem from './SlotShow.js'
+import {addWinner} from '../../components/winnersList/winnersList.js'
 
 let idInterval = null;
 
@@ -96,6 +97,7 @@ function starSorteio(randomizer){
                     element.classList.remove("aboveItem")
                     element.classList.add("middleItem")
                     element.parentElement.dataset.won = "true"
+                    addWinner(randomizer.currentWinners)
                     randomizer.addCurrentWinners()
                     endIteration1++
                 } else {
