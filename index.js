@@ -14,14 +14,14 @@ app.appendChild(Footer())
 
 // header
 document.addEventListener("onstatechange", function (e){
-  root.innerHTML = "";
+  randomix.innerHTML = "";
   const path = e.detail.path;
   history.pushState({"path": path}, "", path);
-  root.appendChild(routerT.getPage(path));
+  randomix.appendChild(routerT[path]);
 })
 
 window.addEventListener("popstate", function(e){
-  root.innerHTML = "";
+  randomix.innerHTML = "";
   const path = e.state === null ? "/" : e.state.path;
-  root.appendChild(routerT.getPage(path));
+  randomix.appendChild(routerT[path]);
 })
