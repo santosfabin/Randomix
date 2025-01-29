@@ -5,7 +5,7 @@ import {InputItens} from '../../components/itens/InputItens.js'
 import {WinnersList} from '../../components/winnersList/winnersList.js'
 import {Button} from '../../components/button/button.js'
 
-function SlotPage(){
+export default function SlotPage(){
     const sortear = new Randomizer()
     const containerSlotPage = document.createElement("div")
     const inputItens = InputItens(sortear, containerSlotPage)
