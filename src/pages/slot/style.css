@@ -23,7 +23,7 @@
 .showSlotItem{
     height: 60px;
     width: 135px;
-    border: 3px solid #FF2E63;
+    border: 3px solid #f2e8cf;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -53,16 +53,12 @@
     padding: 10px;
     max-width: 1050px;
     border-radius: 20px;
-    background-color: #333333;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: #386641;
 }
 
 .buttonSlot{
-    background-color: #FF2E63;
-    color: #ffffff;
+    background-color: #f2e8cf;
+    color: #000;
     border: none;
     font-size: 1.1rem;
     padding: 10px 15px;
@@ -73,3 +69,22 @@
     cursor: pointer;
 }
 
+.containerItens{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 10px;
+}
+
+#SlotPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
