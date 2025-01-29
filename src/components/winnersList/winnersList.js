@@ -60,12 +60,18 @@ function addWinner(winner) {
   });
 }
 
-export { WinnersList, addWinner };
+function resetWinner() {
+  remenberingOldWinners = []
+  document.getElementById("listSection").innerHTML = ""
+}
+
+export { WinnersList, addWinner, resetWinner};
 
 // TEST
 
 // const test = WinnersList();
 // document.querySelector("body").appendChild(test);
+// document.querySelector("button").addEventListener("click", ()=>{resetWinner()})
 
 // addWinner([
 //   "gabriell",
