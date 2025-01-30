@@ -16,7 +16,7 @@ function createScratchCard() {
   scratchCard.appendChild(mainSection);
 
   const textSection = document.createElement("div");
-  textSection.innerText = `Se não ganhou, não ganha mais.`;
+  textSection.innerText = `If you didn't win, you won't win anymore.`;
   textSection.id = `textCardSection`;
   mainSection.appendChild(textSection);
 
