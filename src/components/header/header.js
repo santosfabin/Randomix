@@ -30,19 +30,19 @@ function Header() {
 }
 
 function redirectHomePage() {
-  const toHomePage = customEvent("/");
+  const toHomePage = customEventPath("/");
 
   document.dispatchEvent(toHomePage);
 }
 
 function redirectScratchPage() {
-  const toScratchPage = customEvent("/scratch");
+  const toScratchPage = customEventPath("/scratch");
 
   document.dispatchEvent(toScratchPage);
 }
 
 function redirectSlotPage() {
-  const toSlotPage = customEvent("/slot");
+  const toSlotPage = customEventPath("/slot");
 
   document.dispatchEvent(toSlotPage);
 }
