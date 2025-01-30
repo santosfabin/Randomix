@@ -5,7 +5,7 @@ import Slot from '../pages/slot/index.js'
 
 function router() {
     const scratch = Scratch()
-    const roullet = Roullet()
+//    const roullet = Roullet()
     const defaultPage = Default()
     const slot = Slot()
     return {
@@ -17,3 +17,4 @@ function router() {
 }
 
 export { router }
+

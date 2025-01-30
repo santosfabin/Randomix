@@ -1,4 +1,4 @@
-import { customEvent } from "../../utils/customEvent.js";
+// import { customEvent } from "../../utils/customEvent.js";
 
 function Header() {
   const headerContainer = document.createElement("header");
@@ -35,27 +35,27 @@ function Header() {
 }
 
 function redirectHomePage() {
-  const toHomePage = customEvent("/");
+  // const toHomePage = customEvent("/");
 
-  document.dispatchEvent(toHomePage);
+  // document.dispatchEvent(toHomePage);
 }
 
 function redirectRoulettePage() {
-  const toRoulettePage = customEvent("/roullet");
+  // const toRoulettePage = customEvent("/roullet");
 
-  document.dispatchEvent(toRoulettePage);
+  // document.dispatchEvent(toRoulettePage);
 }
 
 function redirectScratchPage() {
-  const toScratchPage = customEvent("/scratch");
+  // const toScratchPage = customEvent("/scratch");
 
-  document.dispatchEvent(toScratchPage);
+  // document.dispatchEvent(toScratchPage);
 }
 
 function redirectSlotPage() {
-  const toSlotPage = customEvent("/slot");
+  // const toSlotPage = customEvent("/slot");
 
-  document.dispatchEvent(toSlotPage);
+  // document.dispatchEvent(toSlotPage);
 }
 
 export { Header };
