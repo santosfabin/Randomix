@@ -1,5 +1,5 @@
 import {checkScreenSize, addSlot, removeSlot, lockButtons, unlockButtons} from '../../pages/slot/util.js'
-import {ShowItem} from './SlotShow.js'
+import {ShowItem} from '../slowShow/SlotShow.js'
 import {addWinner, resetWinner} from '../../components/winnersList/winnersList.js'
 
 let idInterval = null;
@@ -45,13 +45,13 @@ function SlotMachine(randomizer){
         slotContainerItens.appendChild(ShowItem())
     }
 
-    slotContainerButtons.appendChild(Button(() => {starSorteio(randomizer)}, "Sortear", "buttonStart", "buttonSlot"))
+    slotContainerButtons.appendChild(Button(() => {starSorteio(randomizer)}, "Spin", "buttonStart", "buttonSlot"))
     slotContainerButtons.appendChild(Button(() => {addSlot(randomizer)}, "+", "buttonAddSlot", "buttonSlot"))
     slotContainerButtons.appendChild(Button(removeSlot, "-", "buttonRemoveSlot", "buttonSlot"))
     slotContainerButtons.appendChild(Button(() => {
         randomizer.resetWinners()
         resetWinner()
-    }, "Reiniciar", "buttonRestart", "buttonSlot"))
+    }, "Reset", "buttonRestart", "buttonSlot"))
 
     return slotContainer
 }
@@ -112,7 +112,7 @@ function starSorteio(randomizer){
     const showSlotItensLenght = document.querySelectorAll(".showSlotItem").length
     const remainingSizeToPick = randomizer.remainingSizeToPick()
     if(!remainingSizeToPick){
-        NotificationError("Sem itens")
+        NotificationError("Without itens")
         return
     }
     if (showSlotItensLenght > remainingSizeToPick){
@@ -121,7 +121,7 @@ function starSorteio(randomizer){
         }
     }
     if(idInterval){
-        NotificationError("Sorteio Acontecendo")
+        NotificationError("Spinning is happening")
         return
     }
     const showSlotItens = document.querySelectorAll(".showSlotItem")
