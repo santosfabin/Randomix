@@ -1,4 +1,6 @@
+import { Randomizer } from "../../utils/randomizer.js";
 import { Button } from "../button/button.js";
+import { NotificationError } from "../modalError/modalError.js"
 
 /**
  * Creates a div that contais a textArea and a button that will call the getList function.
@@ -11,9 +13,11 @@ function InputItens(randomizer, newContainer) {
   const container = document.createElement("div");
   const textArea = document.createElement("textarea");
 
+  updateTextArea(randomizer, textArea)
+
   container.classList.add("containerItens");
   textArea.classList.add("textAreaItens");
-  textArea.placeholder = "Separe os itens por vírgula";
+  textArea.placeholder = "Separate items with commas";
 
   container.appendChild(textArea);
   container.appendChild(
@@ -50,12 +54,27 @@ function getList(text, randomizer, containerTextArea, newContainer) {
     .filter((element) => element != "");
   list = Array.from(new Set(list));
   if (list.length <= 1) {
-    alert("Coloque no mínimo dois itens na lista");
+    NotificationError("Put at least two items on the list");
     return;
   }
   randomizer.list = list;
   containerTextArea.remove();
   document.getElementById("randomix").appendChild(newContainer);
+}
+
+function updateTextArea(randomizer, textArea) {
+  if(randomizer.list.length > 0){
+    let listString = ""
+    console.log(randomizer.list)
+    randomizer.list.forEach((element, index) => {
+      if(index == 0){
+        listString += element
+      } else{
+        listString += `, ${element}`
+      }
+    });
+    textArea.value = listString
+  }
 }
 
 export { InputItens };
