@@ -4,6 +4,12 @@ import {addWinner, resetWinner} from '../../components/winnersList/winnersList.j
 
 let idInterval = null;
 
+/**
+ * Creates the div of the slot machine
+ * 
+ * @param {Randomizer} randomizer - Instance of the Randomizer class
+ * @returns - SlotMachine html element
+ */
 function SlotMachine(randomizer){
     const slotContainer = document.createElement("div");
     const slotContainerItens = document.createElement("div");
@@ -50,6 +56,7 @@ function SlotMachine(randomizer){
     return slotContainer
 }
 
+
 function Button(action, innerText, ID, classCSS){
     const button = document.createElement("button");
     button.innerText = innerText
@@ -68,6 +75,13 @@ function Button(action, innerText, ID, classCSS){
     return button
 }
 
+/**
+ * Creates the element that will be spinned in the slot machine
+ * 
+ * @param {string} item - Picked value of the randomizer
+ * @param {string} place - Postion of the itemSlot
+ * @returns ItemSlot html element
+ */
 function ItemSlot(item, place){
     const itemSlot = document.createElement("div");
     itemSlot.classList.add("itemSlot")
@@ -89,6 +103,11 @@ function ItemSlot(item, place){
     return itemSlot
 }
 
+/**
+ * Starts to spin the slot machine itens, and after "end" times it stops
+ * 
+ * @param {Randomizer} randomizer - Instance of the Randomizer class
+ */
 function starSorteio(randomizer){
     const showSlotItensLenght = document.querySelectorAll(".showSlotItem").length
     const remainingSizeToPick = randomizer.remainingSizeToPick()
