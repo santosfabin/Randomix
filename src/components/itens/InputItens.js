@@ -1,5 +1,12 @@
 import { Button } from "../button/button.js";
 
+/**
+ * Creates a div that contais a textArea and a button that will call the getList function.
+ * 
+ * @param {Randomizer} randomizer - A instance of the Randomizer class
+ * @param {html Div} newContainer - The container of the page (slot-page, default-page, scratch-page)\
+ * @returns {html Div} A html element
+ */
 function InputItens(randomizer, newContainer) {
   const container = document.createElement("div");
   const textArea = document.createElement("textarea");
@@ -23,6 +30,15 @@ function InputItens(randomizer, newContainer) {
   return container;
 }
 
+/**
+ * Transforms the text value from the text area into a list of itens that cannot have repeted itens.
+ * It removes the containerTextArea from the page, and after this, it adds newContainer to the page.
+ * 
+ * @param {string} text - The text of the textArea
+ * @param {Randomizer} randomizer - A instance of the Randomizer class
+ * @param {html Div} containerTextArea - The container of the textArea
+ * @param {html Div} newContainer - The container of the page (slot-page, default-page, scratch-page)
+ */
 function getList(text, randomizer, containerTextArea, newContainer) {
   let list = text.replace(", ", ",").split(",");
   list = list
@@ -39,7 +55,7 @@ function getList(text, randomizer, containerTextArea, newContainer) {
   }
   randomizer.list = list;
   containerTextArea.remove();
-  document.getElementById("app").appendChild(newContainer);
+  document.getElementById("randomix").appendChild(newContainer);
 }
 
 export { InputItens };
