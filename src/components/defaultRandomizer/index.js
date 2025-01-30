@@ -1,12 +1,17 @@
 import {Randomizer} from "../../utils/randomizer.js";
 import {InputItens} from "../itens/InputItens.js";
-import {WinnersList, addWinner} from "../winnersList/winnersList.js";
+import {
+	WinnersList,
+	addWinner,
+	resetWinner
+} from "../winnersList/winnersList.js";
 import {NotificationError} from "../modalError/modalError.js";
 
 const random = new Randomizer();
 
 function resetWinners() {
 	random.resetWinners();
+	resetWinner();
 }
 
 function randomix(amount, actived) {
@@ -51,11 +56,15 @@ function defaultPage() {
 
 	const winnersChampionsMyFriend = document.createElement("div");
 	const resetButton = document.createElement("p");
-  resetButton.innerText = "Reset winners"
+	resetButton.innerText = "Reset winners";
+	resetButton.style.cursor = "pointer";
 
 	randomizer.innerText = "Randomizer";
-  
+	randomizer.id = "button-randomizer"
+	randomizer.style.cursor = "pointer";
+
 	returnButton.innerText = "Return";
+	returnButton.style.cursor = "pointer";
 
 	estruture.appendChild(randomizer);
 
@@ -67,9 +76,9 @@ function defaultPage() {
 
 	estruture.appendChild(winnersList);
 
-  resetButton.addEventListener("click", () => {
-    resetWinners()
-  })
+	resetButton.addEventListener("click", () => {
+		resetWinners();
+	});
 
 	randomizer.addEventListener("click", () => {
 		try {
