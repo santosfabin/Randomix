@@ -8,20 +8,43 @@ export default function SlotMachine(randomizer){
     const slotContainer = document.createElement("div");
     const slotContainerItens = document.createElement("div");
     const slotContainerButtons = document.createElement("div");
+
     slotContainer.appendChild(slotContainerItens)
     slotContainer.appendChild(slotContainerButtons)
-    slotContainerItens.classList.add("slotContainerItens")
-    slotContainer.classList.add("slotContainer")
-    slotContainerButtons.classList.add("slotContainerButtons")
+
+    slotContainer.style.display = "flex";
+    slotContainer.style.flexDirection = "column";
+    slotContainer.style.justifyContent = "center";
+    slotContainer.style.alignItems = "center";
+    slotContainer.style.gap = "10px";
+    slotContainer.style.height = "150px";
+    slotContainer.style.width = "fit-content";
+    slotContainer.style.padding = "10px";
+    slotContainer.style.maxWidth = "1050px";
+    slotContainer.style.borderRadius = "20px";
+    slotContainer.style.backgroundColor = "#386641";
+
+    slotContainerButtons.style.display = "flex";
+    slotContainerButtons.style.gap = "10px";
+    slotContainerButtons.style.width = "fit-content";
+
+    slotContainerItens.style.display = "flex";
+    slotContainerItens.style.gap = "10px";
+    slotContainerItens.style.height = "fit-content";
+
     slotContainerItens.innerHTML = ""
     slotContainerButtons.innerHTML = ""
+
     for (let i = 0; i < checkScreenSize(window.innerWidth); i++) {
         slotContainerItens.appendChild(ShowItem())
     }
+
     slotContainerButtons.appendChild(Button(() => {starSorteio(randomizer)}, "Sortear", "buttonStart", "buttonSlot"))
     slotContainerButtons.appendChild(Button(() => {addSlot(randomizer)}, "+", "buttonAddSlot", "buttonSlot"))
     slotContainerButtons.appendChild(Button(removeSlot, "-", "buttonRemoveSlot", "buttonSlot"))
     slotContainerButtons.appendChild(Button(() => {randomizer.resetWinners()}, "Reiniciar", "buttonRestart", "buttonSlot"))
+
+    console.log(slotContainerButtons)
     return slotContainer
 }
 
@@ -30,6 +53,15 @@ function Button(action, innerText, ID, classCSS){
     button.innerText = innerText
     button.id = ID
     button.classList.add(classCSS)
+
+    button.style.backgroundColor = "#f2e8cf";
+    button.style.color = "#000";
+    button.style.border = "none";
+    button.style.fontSize = "1.1rem";
+    button.style.padding = "10px 15px";
+    button.style.borderRadius = "5px";
+    button.style.cursor = "pointer";
+
     button.addEventListener("click", action)
     return button
 }
@@ -38,6 +70,15 @@ function ItemSlot(item, place){
     const itemSlot = document.createElement("div");
     itemSlot.classList.add("itemSlot")
     itemSlot.innerText = item
+
+    itemSlot.style.height = "60px";
+    itemSlot.style.width = "100%";
+    itemSlot.style.display = "flex";
+    itemSlot.style.justifyContent = "center";
+    itemSlot.style.alignItems = "center";
+    itemSlot.style.position = "absolute";
+    itemSlot.style.fontSize = "20px";
+
     if (place === "middle"){
         itemSlot.classList.add("middleItem")
     }else{

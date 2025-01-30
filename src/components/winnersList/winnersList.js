@@ -60,7 +60,7 @@ function addWinner(winner) {
   });
 }
 
-export { WinnersList };
+export { WinnersList , addWinner};
 
 // TEST
 

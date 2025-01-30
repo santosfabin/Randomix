@@ -18,6 +18,13 @@ export default function SlotPage(){
     () => {resetPage(containerSlotPage)}
     );
     containerSlotPage.id = "SlotPage"
+
+    containerSlotPage.style.display = "flex";
+    containerSlotPage.style.flexDirection = "column";
+    containerSlotPage.style.alignItems = "center";
+    containerSlotPage.style.padding = "10px";
+    containerSlotPage.style.gap = "10px";
+
     inputItens.id = "inputSlotPage"
     buttonRETURN.classList.add("buttonRETURN")
     containerSlotPage.appendChild(slotMachine)
