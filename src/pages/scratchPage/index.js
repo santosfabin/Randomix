@@ -13,7 +13,7 @@ const raffleMaker = new Randomizer();
 function ScratchPage() {
   const mainPage = SecondPage();
 
-  const inputItens = InputItens(raffleMaker, mainPage);
+  const inputItens = InputItens(raffleMaker, mainPage, "Scratch");
 
   inputItens.querySelector("button").addEventListener("click", () => {
     createSratch(raffleMaker);
