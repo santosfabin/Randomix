@@ -28,7 +28,7 @@ function SlotMachine(randomizer){
     slotContainer.style.padding = "10px";
     slotContainer.style.maxWidth = "1050px";
     slotContainer.style.borderRadius = "20px";
-    slotContainer.style.backgroundColor = "#386641";
+    slotContainer.style.backgroundColor = "#1A3B28";
 
     slotContainerButtons.style.display = "flex";
     slotContainerButtons.style.gap = "10px";
@@ -89,6 +89,7 @@ function ItemSlot(item, place){
 
     itemSlot.style.height = "60px";
     itemSlot.style.width = "100%";
+    itemSlot.style.color = "#000";
     itemSlot.style.display = "flex";
     itemSlot.style.justifyContent = "center";
     itemSlot.style.alignItems = "center";
