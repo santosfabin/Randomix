@@ -1,0 +1,22 @@
+.containerItens{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 10px;
+}
+
+.textAreaItens{
+    width: 85%;
+    max-width: 700px;
+    min-height: 200px;
+    max-height: 400px;
+    padding: 7px;
+    font-size: 1rem;
+    border-radius: 8px;
+    resize: vertical;
+}
