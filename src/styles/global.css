@@ -52,10 +52,9 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 100vw;
 	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
 		"Lucida Sans", Arial, sans-serif;
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid white;
 	padding: 10px 40px;
 }
 
@@ -75,20 +74,14 @@ nav > div:hover {
 
 @media (max-width: 750px) {
 	#headerContainer {
-		flex-direction: column;
-		row-gap: 20px;
+	  flex-direction: column;
+	  row-gap: 20px;
 	}
-}
-
-@media (max-width: 500px) {
+  }
+  
+  @media (max-width: 450px) {
 	#headerContainer > nav {
-		column-gap: 50px;
-	}
-}
-
-@media (max-width: 350px) {
-	#headerContainer > nav {
-		column-gap: 25px;
+	  column-gap: 85px;
 	}
 }
 /* end header */
