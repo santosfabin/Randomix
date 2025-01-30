@@ -1,11 +1,11 @@
 import {Randomizer} from "../../utils/randomizer.js";
-import {InputItens} from "../itens/InputItens.js";
+import {InputItens} from "../../components/itens/InputItens.js";
 import {
 	WinnersList,
 	addWinner,
 	resetWinner
-} from "../winnersList/winnersList.js";
-import {NotificationError} from "../modalError/modalError.js";
+} from "../../components/winnersList/winnersList.js";
+import {NotificationError} from "../../components/modalError/modalError.js";
 
 const random = new Randomizer();
 
