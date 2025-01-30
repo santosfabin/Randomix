@@ -1,6 +1,6 @@
 import {checkScreenSize, addSlot, removeSlot, lockButtons, unlockButtons} from './util.js'
 import ShowItem from './SlotShow.js'
-import {addWinner} from '../../components/winnersList/winnersList.js'
+import {addWinner, resetWinner} from '../../components/winnersList/winnersList.js'
 
 let idInterval = null;
 
@@ -42,9 +42,11 @@ export default function SlotMachine(randomizer){
     slotContainerButtons.appendChild(Button(() => {starSorteio(randomizer)}, "Sortear", "buttonStart", "buttonSlot"))
     slotContainerButtons.appendChild(Button(() => {addSlot(randomizer)}, "+", "buttonAddSlot", "buttonSlot"))
     slotContainerButtons.appendChild(Button(removeSlot, "-", "buttonRemoveSlot", "buttonSlot"))
-    slotContainerButtons.appendChild(Button(() => {randomizer.resetWinners()}, "Reiniciar", "buttonRestart", "buttonSlot"))
+    slotContainerButtons.appendChild(Button(() => {
+        randomizer.resetWinners()
+        resetWinner()
+    }, "Reiniciar", "buttonRestart", "buttonSlot"))
 
-    console.log(slotContainerButtons)
     return slotContainer
 }
 
