@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-/* TEST
+/* TEST 
 
 body {
   display: flex;
@@ -34,7 +34,7 @@ body {
 
 #listSection {
   width: 290px;
-  height: 300px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
