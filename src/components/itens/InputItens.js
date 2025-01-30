@@ -13,7 +13,7 @@ function InputItens(randomizer, newContainer) {
 
   container.classList.add("containerItens");
   textArea.classList.add("textAreaItens");
-  textArea.placeholder = "Separe os itens por vírgula";
+  textArea.placeholder = "Separate items with commas";
 
   container.appendChild(textArea);
   container.appendChild(
