@@ -3,7 +3,7 @@
  * 
  * @class
  */
-export class Randomizer {
+class Randomizer {
     /** 
      * Creates an item picker.
      * 
@@ -112,3 +112,4 @@ export class Randomizer {
 
 }
 
+export { Randomizer }

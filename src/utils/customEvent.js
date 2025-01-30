@@ -1,3 +1,5 @@
-export default function customEventPath(path){
+function customEventPath(path){
     return new CustomEvent("onstatechange", {detail: {"path": path}})
 }
+
+export { customEventPath }
