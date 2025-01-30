@@ -4,14 +4,13 @@ import {router} from "./src/utils/router.js";
 import {DefaultPage} from "./src/pages/defaultRandomizer/index.js"
 
 const app = document.getElementById("app");
-const body = document.querySelector("body");
 const randomix = document.createElement("div");
 randomix.id = "randomix";
 const routerT = router();
 
 app.appendChild(Header());
 app.appendChild(randomix);
-body.appendChild(Footer());
+app.appendChild(Footer());
 
 randomix.appendChild(DefaultPage())
 
