@@ -36,7 +36,7 @@ function SecondPage() {
   const buttonReturn = Button(
     "RETURN",
     "/src/assets/button/returnButton.svg",
-    "linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%)",
+    "linear-gradient(-225deg, #0ba360 0%, #3cba92 100%)",
     () => {
       document.getElementById("scratchPage").remove();
 

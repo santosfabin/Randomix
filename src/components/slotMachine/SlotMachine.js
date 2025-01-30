@@ -18,6 +18,8 @@ function SlotMachine(randomizer){
     slotContainer.appendChild(slotContainerItens)
     slotContainer.appendChild(slotContainerButtons)
 
+    slotContainerItens.classList.add("slotContainerItens")
+
     slotContainer.style.display = "flex";
     slotContainer.style.flexDirection = "column";
     slotContainer.style.justifyContent = "center";
