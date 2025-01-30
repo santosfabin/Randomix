@@ -26,11 +26,12 @@ function SecondPage() {
   const scratchPage = document.createElement("div");
   scratchPage.id = `scratchPage`;
 
-  const scratchCard = createScratchCard();
-  scratchPage.appendChild(scratchCard);
+  const scratchPageSection1 = document.createElement("div")
+  scratchPageSection1.id = "scratchPageSection1"
+  scratchPage.appendChild(scratchPageSection1);
 
-  const winnersList = WinnersList();
-  scratchPage.appendChild(winnersList);
+  const scratchCard = createScratchCard();
+  scratchPageSection1.appendChild(scratchCard);
 
   const buttonReturn = Button(
     "RETURN",
@@ -39,12 +40,15 @@ function SecondPage() {
     () => {
       document.getElementById("scratchPage").remove();
 
-      document.getElementById("app").appendChild(ScratchPage());
+      document.getElementById("randomix").appendChild(ScratchPage());
     }
   );
-  scratchPage.appendChild(buttonReturn);
+  scratchPageSection1.appendChild(buttonReturn);
+
+  const winnersList = WinnersList();
+  scratchPage.appendChild(winnersList);
 
   return scratchPage;
 }
 
-document.getElementById("app").appendChild(ScratchPage());
+export { ScratchPage };
