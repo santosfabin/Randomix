@@ -1,4 +1,4 @@
-import ShowItem from './SlotShow.js'
+import ShowItem from '../../components/slowShow/SlotShow.js'
 
 import {NotificationError} from '../../components/modalError/modalError.js'
 

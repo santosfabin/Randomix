@@ -1,4 +1,4 @@
-import {checkScreenSize, addSlot, removeSlot, lockButtons, unlockButtons} from './util.js'
+import {checkScreenSize, addSlot, removeSlot, lockButtons, unlockButtons} from '../../pages/slot/util.js'
 import ShowItem from './SlotShow.js'
 import {addWinner, resetWinner} from '../../components/winnersList/winnersList.js'
 

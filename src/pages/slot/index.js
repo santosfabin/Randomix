@@ -1,5 +1,5 @@
 import {Randomizer} from '../../utils/randomizer.js'
-import SlotMachine from './SlotMachine.js'
+import SlotMachine from '../../components/slotMachine/SlotMachine.js'
 import {checkScreenSize, removeSlot} from './util.js'
 import {InputItens} from '../../components/itens/InputItens.js'
 import {WinnersList} from '../../components/winnersList/winnersList.js'
