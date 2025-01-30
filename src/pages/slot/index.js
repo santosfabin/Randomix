@@ -14,7 +14,7 @@ function SlotPage(){
     const buttonRETURN = Button(
     "RETURN",
     "/src/assets/button/returnButton.svg",
-    "linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%)",
+    "linear-gradient(-225deg, #0ba360 0%, #3cba92 100%)",
     () => {resetPage(containerSlotPage)}
     );
     containerSlotPage.id = "SlotPage"
@@ -22,8 +22,10 @@ function SlotPage(){
     containerSlotPage.style.display = "flex";
     containerSlotPage.style.flexDirection = "column";
     containerSlotPage.style.alignItems = "center";
-    containerSlotPage.style.padding = "10px";
+    containerSlotPage.style.padding = "20px";
+    containerSlotPage.style.paddingBottom = "50px";
     containerSlotPage.style.gap = "10px";
+    containerSlotPage.style.width = "100%";
 
     inputItens.id = "inputSlotPage"
     buttonRETURN.classList.add("buttonRETURN")

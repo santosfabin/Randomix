@@ -1,18 +1,15 @@
-import Default from '../pages/home/index.js'
-// import Roullet from '../pages/roullet/index.js'
-import Scratch from '..pages/scratch/index.js'
-import Slot from '../pages/slot/index.js'
+import {DefaultPage} from '../pages/defaultRandomizer/index.js'
+import {ScratchPage} from '../pages/scratchPage/index.js'
+import {SlotPage} from '../pages/slot/index.js'
 
 function router() {
-    const scratch = Scratch()
-//    const roullet = Roullet()
-    const defaultPage = Default()
-    const slot = Slot()
+    const scratchPage = ScratchPage()
+    const defaultPage = DefaultPage()
+    const slotPage = SlotPage()
     return {
         "/": defaultPage,
-        // "/roullet":  roullet,
-        "/scratch": scratch,
-        "/slot": slot,
+        "/scratch": scratchPage,
+        "/slot": slotPage,
     }
 }
 
