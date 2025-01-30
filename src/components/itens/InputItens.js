@@ -39,7 +39,7 @@ function getList(text, randomizer, containerTextArea, newContainer) {
   }
   randomizer.list = list;
   containerTextArea.remove();
-  document.getElementById("app").appendChild(newContainer);
+  document.getElementById("randomix").appendChild(newContainer);
 }
 
 export { InputItens };
