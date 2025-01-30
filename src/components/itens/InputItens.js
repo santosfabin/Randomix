@@ -1,3 +1,4 @@
+import { Randomizer } from "../../utils/randomizer.js";
 import { Button } from "../button/button.js";
 import { NotificationError } from "../modalError/modalError.js"
 
@@ -11,6 +12,8 @@ import { NotificationError } from "../modalError/modalError.js"
 function InputItens(randomizer, newContainer) {
   const container = document.createElement("div");
   const textArea = document.createElement("textarea");
+
+  updateTextArea(randomizer, textArea)
 
   container.classList.add("containerItens");
   textArea.classList.add("textAreaItens");
@@ -57,6 +60,21 @@ function getList(text, randomizer, containerTextArea, newContainer) {
   randomizer.list = list;
   containerTextArea.remove();
   document.getElementById("randomix").appendChild(newContainer);
+}
+
+function updateTextArea(randomizer, textArea) {
+  if(randomizer.list.length > 0){
+    let listString = ""
+    console.log(randomizer.list)
+    randomizer.list.forEach((element, index) => {
+      if(index == 0){
+        listString += element
+      } else{
+        listString += `, ${element}`
+      }
+    });
+    textArea.value = listString
+  }
 }
 
 export { InputItens };
