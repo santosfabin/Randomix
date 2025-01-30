@@ -1,4 +1,4 @@
-export default function ShowItem(){
+function ShowItem(){
     const showSlotItem = document.createElement("div");
 
     showSlotItem.classList.add("showSlotItem")
@@ -12,3 +12,5 @@ export default function ShowItem(){
 
     return showSlotItem
 }
+
+export { ShowItem }

@@ -1,10 +1,10 @@
 import {checkScreenSize, addSlot, removeSlot, lockButtons, unlockButtons} from '../../pages/slot/util.js'
-import ShowItem from './SlotShow.js'
+import {ShowItem} from './SlotShow.js'
 import {addWinner, resetWinner} from '../../components/winnersList/winnersList.js'
 
 let idInterval = null;
 
-export default function SlotMachine(randomizer){
+function SlotMachine(randomizer){
     const slotContainer = document.createElement("div");
     const slotContainerItens = document.createElement("div");
     const slotContainerButtons = document.createElement("div");
@@ -161,3 +161,5 @@ function starSorteio(randomizer){
         i++;
     }
 }
+
+export {SlotMachine}
