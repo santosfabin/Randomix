@@ -23,7 +23,7 @@ function addSlot(randomizer) {
     remainingSizeToPick <= showSlotItensLenght ||
     checkScreenSize(window.innerWidth) == showSlotItensLenght
   ) {
-    NotificationError("Não é possível adicionar mais slots");
+    NotificationError("It is not possible to add more slots");
     return;
   }
   slotContainerItens.appendChild(ShowItem());
@@ -33,7 +33,7 @@ function removeSlot() {
   const showSlotItens = document.querySelectorAll(".showSlotItem");
   const showSlotItensLenght = document.querySelectorAll(".showSlotItem").length;
   if (showSlotItensLenght == 1) {
-    NotificationError("Não é possível remover mais slots");
+    NotificationError("It is not possible to remove more slots");
     return;
   }
   showSlotItens[0].remove();
