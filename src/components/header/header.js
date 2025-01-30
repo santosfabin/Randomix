@@ -1,4 +1,4 @@
-import { customEvent } from "../../utils/customEvent.js";
+import { customEventPath } from "../../utils/customEvent.js";
 
 function Header() {
   const headerContainer = document.createElement("header");
@@ -15,11 +15,6 @@ function Header() {
   navElement1.innerText = `Home`;
   navElement1.addEventListener("click", redirectHomePage);
   navContainer.appendChild(navElement1);
-
-  const navElement2 = document.createElement("div");
-  navElement2.innerText = `Roulette`;
-  navElement2.addEventListener("click", redirectRoulettePage);
-  navContainer.appendChild(navElement2);
 
   const navElement3 = document.createElement("div");
   navElement3.innerText = `Scratch`;
@@ -38,12 +33,6 @@ function redirectHomePage() {
   const toHomePage = customEvent("/");
 
   document.dispatchEvent(toHomePage);
-}
-
-function redirectRoulettePage() {
-  const toRoulettePage = customEvent("/roullet");
-
-  document.dispatchEvent(toRoulettePage);
 }
 
 function redirectScratchPage() {

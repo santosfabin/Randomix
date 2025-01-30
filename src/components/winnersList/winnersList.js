@@ -24,18 +24,16 @@ function addWinner(winner) {
     remenberingOldWinners.push(element);
   });
 
-  remenberingOldWinners.forEach((element) => {
+  remenberingOldWinners.forEach((element, index) => {
     const winnerContainer = document.createElement("div");
     winnerContainer.className = `winnerContainer`;
     document.getElementById("listSection").appendChild(winnerContainer);
-
-    const index = remenberingOldWinners.indexOf(element);
 
     const winnerPosition = document.createElement("p");
     winnerPosition.className = `winnerPosition`;
     winnerContainer.appendChild(winnerPosition);
 
-    switch (remenberingOldWinners.indexOf(element)) {
+    switch (index) {
       case 0:
         winnerPosition.innerText = `🥇 Resultado`;
         break;
@@ -60,21 +58,19 @@ function addWinner(winner) {
   });
 }
 
-export { WinnersList, addWinner };
+function resetWinner() {
+  remenberingOldWinners = [];
+  document.getElementById("listSection").innerHTML = "";
+}
 
-// TEST
+export { WinnersList, addWinner, resetWinner };
+
+// // TEST
 
 // const test = WinnersList();
 // document.querySelector("body").appendChild(test);
+// document.querySelector("button").addEventListener("click", () => {
+//   resetWinner();
+// });
 
-// addWinner([
-//   "gabriell",
-//   "anderson",
-//   "fabiano",
-//   "albert",
-//   "vitor",
-//   "kenji",
-//   "jamille",
-//   "leandro",
-//   "wanessa",
-// ]);
+// addWinner([1, 2, 3, 4, 1, 2, 5, 6]);
