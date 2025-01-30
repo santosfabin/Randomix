@@ -35,19 +35,19 @@ function addWinner(winner) {
 
     switch (index) {
       case 0:
-        winnerPosition.innerText = `🥇 Resultado`;
+        winnerPosition.innerText = `🥇 Place`;
         break;
 
       case 1:
-        winnerPosition.innerText = `🥈 Resultado`;
+        winnerPosition.innerText = `🥈 Place`;
         break;
 
       case 2:
-        winnerPosition.innerText = `🥉 Resultado`;
+        winnerPosition.innerText = `🥉 Place`;
         break;
 
       default:
-        winnerPosition.innerText = `${index + 1}º Resultado`;
+        winnerPosition.innerText = `${index + 1}º Place`;
 
         break;
     }

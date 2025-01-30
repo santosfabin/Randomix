@@ -17,7 +17,7 @@ function Footer() {
             <li>Anderson</li>
           </a>
           <a href="https://github.com/santosfabin" target="_blank">
-            <li>Faibano</li>
+            <li>Fabiano</li>
           </a>
           <a href="https://github.com/gbrQueiroz" target="_blank">
             <li>Gabriell</li>
