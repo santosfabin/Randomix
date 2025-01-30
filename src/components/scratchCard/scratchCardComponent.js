@@ -1,4 +1,4 @@
-import { addWinner } from "../../components/winnersList/winnersList.js";
+import { addWinner } from "../winnersList/winnersList.js";
 
 let winnersList = [];
 

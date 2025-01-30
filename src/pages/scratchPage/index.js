@@ -6,7 +6,7 @@ import { WinnersList } from "../../components/winnersList/winnersList.js";
 
 import { Randomizer } from "../../utils/randomizer.js";
 
-import { createScratchCard, createSratch } from "./scratchCardComponent.js";
+import { createScratchCard, createSratch } from "../../components/scratchCard/scratchCardComponent.js";
 
 const raffleMaker = new Randomizer();
 
