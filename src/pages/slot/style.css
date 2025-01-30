@@ -1,0 +1,11 @@
+.aboveItem{
+    top: -80px
+}
+
+.middleItem{
+    top: 0px
+}
+
+.bellowItem{
+    top: 80px
+}
