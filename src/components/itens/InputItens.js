@@ -1,4 +1,5 @@
 import { Button } from "../button/button.js";
+import { NotificationError } from "../modalError/modalError.js"
 
 /**
  * Creates a div that contais a textArea and a button that will call the getList function.
@@ -50,7 +51,7 @@ function getList(text, randomizer, containerTextArea, newContainer) {
     .filter((element) => element != "");
   list = Array.from(new Set(list));
   if (list.length <= 1) {
-    alert("Coloque no mínimo dois itens na lista");
+    NotificationError("Put at least two items on the list");
     return;
   }
   randomizer.list = list;
