@@ -3,7 +3,7 @@
  * 
  * @class
  */
-export class Randomizer {
+class Randomizer {
     /** 
      * Creates an item picker.
      * 
@@ -46,7 +46,7 @@ export class Randomizer {
         else {
             let i = 0
             while(i < number){
-                const pickedValue = this._list[(Math.random() * (this._list.length - 1)).toFixed(0)]
+                const pickedValue = this._list[Math.floor((Math.random() * this._list.length))]
                 if(!this._allWinners.includes(pickedValue) && !this._currentWinners.includes(pickedValue)){
                     this._currentWinners.push(pickedValue)
                     i++;
@@ -112,3 +112,4 @@ export class Randomizer {
 
 }
 
+export { Randomizer }
