@@ -9,13 +9,3 @@
 .bellowItem{
     top: 80px
 }
-
-.itemSlot{
-    height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    font-size: 20px;
-}
