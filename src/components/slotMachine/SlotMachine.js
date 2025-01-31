@@ -85,6 +85,10 @@ function SlotMachine(randomizer) {
       () => {
         randomizer.resetWinners();
         resetWinner();
+        const elementsMiddle = document.querySelectorAll(".middleItem");
+        elementsMiddle.forEach((element) => {
+          element.remove();
+        });
       },
       "Reset",
       "buttonRestart",
@@ -162,7 +166,7 @@ function startDraw(randomizer) {
   const showSlotItens = document.querySelectorAll(".showSlotItem");
   let i = 0;
   const time = 300;
-  const end = 10;
+  const end = 15;
   lockButtons();
   showSlotItens.forEach((element) => {
     element.dataset.won = "false";
@@ -194,7 +198,10 @@ function startDraw(randomizer) {
           element.classList.remove("aboveItem");
           element.classList.add("middleItem");
           element.parentElement.dataset.won = "true";
-          addWinner(randomizer.currentWinners);
+          const winners = randomizer.currentWinners
+          setTimeout(() => {
+            addWinner(winners)
+          }, 70);
           randomizer.addCurrentWinners();
           endIteration1++;
         } else {
