@@ -65,7 +65,6 @@ function getList(text, randomizer, containerTextArea, page) {
   }
   randomizer.list = list;
   containerTextArea.remove();
-  console.log(page())
   document.getElementById("randomix").appendChild(page());
 }
 
