@@ -48,12 +48,12 @@ function DefaultPage() {
 	estruture.innerHTML = `
     <label id="how-many-default">
       <span>How many?</span>
-      <input type="number" min="1" />
+      <input type="number" min="1" placeholder="1"/>
     </label>
 
     <label id="last-winners-no">
       <p>Last winners will no longer be sorted</p>
-      <input id="input-winners-no" type="checkbox" />
+      <input id="input-winners-no" type="checkbox" checked/>
       <span class="checkmark"></span>
     </label>
   `;
@@ -69,8 +69,9 @@ function DefaultPage() {
 	resetButton.innerText = "Reset winners";
 	resetButton.style.cursor = "pointer";
 	resetButton.id = "resetButton";
+  resetButton.style.color = "#ff6e6e"
 
-  randomizer.innerText = "Randomizer";
+  randomizer.innerText = "Draw";
   randomizer.id = "button-randomizer";
   randomizer.style.cursor = "pointer";
 
