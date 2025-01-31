@@ -1,6 +1,5 @@
-function customEventPath(path){
-    return new CustomEvent("onstatechange", {detail: {"path": path}})
+function customEventPath(path) {
+  return new CustomEvent("onstatechange", { detail: { path: path } });
 }
 
-export { customEventPath }
-
+export { customEventPath };

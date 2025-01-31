@@ -2,18 +2,19 @@ function Footer() {
   const divFooter = document.createElement("footer");
 
   const sectionFooter = document.createElement("div");
-  sectionFooter.id = "sectionFooter"
+  sectionFooter.id = "sectionFooter";
   divFooter.appendChild(sectionFooter);
 
   const innerFooterSection = document.createElement("div");
-  innerFooterSection.id = "innerFooterSection"
+  innerFooterSection.id = "innerFooterSection";
   sectionFooter.appendChild(innerFooterSection);
 
-  const innerSection = document.createElement("div")
-  innerFooterSection.appendChild(innerSection)
+  const innerSection = document.createElement("div");
+  innerFooterSection.appendChild(innerSection);
 
   const gitHubImage = document.createElement("img");
-  gitHubImage.src = "https://santosfabin.github.io/Randomix/src/assets/footer/gitHubImage.png";
+  gitHubImage.src =
+    "https://santosfabin.github.io/Randomix/src/assets/footer/gitHubImage.png";
   gitHubImage.alt = "Github";
   innerSection.appendChild(gitHubImage);
 
@@ -50,7 +51,8 @@ function Footer() {
   innerFooterSection.appendChild(alphaImageLink);
 
   const alphaImage = document.createElement("img");
-  alphaImage.src = "https://santosfabin.github.io/Randomix/src/assets/footer/alphaImage.png";
+  alphaImage.src =
+    "https://santosfabin.github.io/Randomix/src/assets/footer/alphaImage.png";
   alphaImage.alt = "AplhaEdtech Site";
   alphaImageLink.appendChild(alphaImage);
 
@@ -60,7 +62,5 @@ function Footer() {
 
   return divFooter;
 }
-
-document.querySelector("body").appendChild(Footer());
 
 export { Footer };

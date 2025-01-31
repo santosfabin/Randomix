@@ -64,13 +64,3 @@ function resetWinner() {
 }
 
 export { WinnersList, addWinner, resetWinner };
-
-// // TEST
-
-// const test = WinnersList();
-// document.querySelector("body").appendChild(test);
-// document.querySelector("button").addEventListener("click", () => {
-//   resetWinner();
-// });
-
-// addWinner([1, 2, 3, 4, 1, 2, 5, 6]);
