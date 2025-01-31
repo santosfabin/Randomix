@@ -33,6 +33,7 @@ function SlotPage() {
   containerSlotPage.style.flexDirection = "column";
   containerSlotPage.style.alignItems = "center";
   containerSlotPage.style.padding = "20px";
+  containerSlotPage.style.paddingTop = "50px";
   containerSlotPage.style.paddingBottom = "50px";
   containerSlotPage.style.gap = "10px";
   containerSlotPage.style.width = "100%";
