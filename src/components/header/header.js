@@ -12,7 +12,7 @@ function Header() {
   headerContainer.appendChild(navContainer);
 
   const navElement1 = document.createElement("div");
-  navElement1.innerText = `Home`;
+  navElement1.innerText = `Default`;
   navElement1.addEventListener("click", redirectHomePage);
   navContainer.appendChild(navElement1);
 

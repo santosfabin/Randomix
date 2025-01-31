@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #efefef;
   background: none;
   border: none;
   outline: none;
@@ -13,12 +12,13 @@
 body {
   --white: #efefef;
   --black-background: #1a3b28;
-  background: #3f6e56;
+  background: var(--white);
   position: relative;
   min-height: 100vh;
 }
 
 #randomix {
+  color: var(--white);
   display: flex;
   justify-content: center;
   padding-bottom: 181.2px;
@@ -42,6 +42,7 @@ footer {
   flex-direction: column;
   row-gap: 35px;
   padding: 20px 0px 20px 0px;
+  color: var(--white);
 }
 
 #innerFooterSection {
@@ -73,6 +74,11 @@ img[src$="gitHubImage.png"] {
 #innerFooterSection > div > a {
   display: flex;
   justify-content: center;
+  color: var(--white);
+}
+
+#innerFooterSection > div > div > a {
+	color: var(--white);
 }
 
 a[href="https://www.alphaedtech.org.br/"]
@@ -94,12 +100,13 @@ a[href="https://www.alphaedtech.org.br/"]
 
 /* header */
 #headerContainer {
+background-color: var(--black-background);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  border-bottom: 2px solid white;
+  color: var(--white);
   padding: 10px 40px;
 }
 
@@ -160,22 +167,30 @@ nav > div:hover {
   font-size: 1rem;
   border-radius: 8px;
   resize: vertical;
-  border: 1px solid var(--white);
+  border: 1px solid #000;
 }
 .textAreaItens::placeholder {
-  color: var(--white);
+  color: #000;
   opacity: 0.5;
 }
 
 /* winner list */
 #containerList {
-  border: 2px solid var(--white);
+  border: 2px solid #000;
   border-radius: 20px;
   padding: 20px 5px;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
   align-items: center;
+}
+
+#random-default > #containerList {
+	border: 2px solid var(--white);
+}
+
+#random-default > #containerList > #listSection > .winnerContainer{
+	color: var(--white);
 }
 
 #imageContainer {
@@ -301,6 +316,7 @@ input[type="number"] {
     padding: 8px 9px;
     width: 3rem;
     font-size: 0.95rem;
+	color: var(--white);
   }
 }
 
@@ -512,7 +528,7 @@ input[type="number"] {
 button {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 15px;
-  color: white;
+  color: var(--white);
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -648,3 +664,7 @@ button:hover {
   }
 }
 /* end scratch */
+
+h1{
+	color:#000;
+}
