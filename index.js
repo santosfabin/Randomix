@@ -20,7 +20,6 @@ document.addEventListener("onstatechange", function (e) {
 	}
 	randomix.innerHTML = "";
 	history.pushState({"path": path}, "", path);
-	console.log(routerT[path])
 	randomix.appendChild(routerT[path]());
 });
 
