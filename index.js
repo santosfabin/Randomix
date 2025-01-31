@@ -12,8 +12,6 @@ app.appendChild(Header());
 app.appendChild(randomix);
 app.appendChild(Footer());
 
-randomix.appendChild(DefaultPage())
-
 // header
 document.addEventListener("onstatechange", function (e) {
 	randomix.innerHTML = "";
@@ -27,3 +25,24 @@ window.addEventListener("popstate", function (e) {
 	const path = e.state === null ? "/" : e.state.path;
 	randomix.appendChild(routerT[path]);
 });
+
+switch(localStorage.getItem("page")){
+	case "/Randomix/scratch":
+			console.log("scratch")
+			randomix.innerHTML = "";
+			history.pushState({"path": "/Randomix/scratch"}, "", "/Randomix/scratch");
+			randomix.appendChild(routerT["/Randomix/scratch"]);
+			break
+	case "/Randomix/slot":
+			console.log("slot")
+			randomix.innerHTML = "";
+			history.pushState({"path": "/Randomix/slot"}, "", "/Randomix/slot");
+			randomix.appendChild(routerT["/Randomix/slot"]);
+			break
+	default:
+			console.log("Default")
+			randomix.appendChild(DefaultPage())
+			break
+}
+
+localStorage.clear()
