@@ -14,8 +14,11 @@ app.appendChild(Footer());
 
 // header
 document.addEventListener("onstatechange", function (e) {
-	randomix.innerHTML = "";
 	const path = e.detail.path;
+	if(path == window.location.pathname){
+		return
+	}
+	randomix.innerHTML = "";
 	history.pushState({"path": path}, "", path);
 	randomix.appendChild(routerT[path]);
 });
@@ -28,19 +31,16 @@ window.addEventListener("popstate", function (e) {
 
 switch(localStorage.getItem("page")){
 	case "/Randomix/scratch":
-			console.log("scratch")
 			randomix.innerHTML = "";
 			history.pushState({"path": "/Randomix/scratch"}, "", "/Randomix/scratch");
 			randomix.appendChild(routerT["/Randomix/scratch"]);
 			break
 	case "/Randomix/slot":
-			console.log("slot")
 			randomix.innerHTML = "";
 			history.pushState({"path": "/Randomix/slot"}, "", "/Randomix/slot");
 			randomix.appendChild(routerT["/Randomix/slot"]);
 			break
 	default:
-			console.log("Default")
 			randomix.appendChild(DefaultPage())
 			break
 }

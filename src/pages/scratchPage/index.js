@@ -2,11 +2,17 @@ import { Button } from "../../components/button/button.js";
 
 import { InputItens } from "../../components/itens/InputItens.js";
 
-import { WinnersList } from "../../components/winnersList/winnersList.js";
+import {
+  WinnersList,
+  cleanList,
+} from "../../components/winnersList/winnersList.js";
 
 import { Randomizer } from "../../utils/randomizer.js";
 
-import { createScratchCard, createSratch } from "../../components/scratchCard/scratchCardComponent.js";
+import {
+  createScratchCard,
+  createSratch,
+} from "../../components/scratchCard/scratchCardComponent.js";
 
 const raffleMaker = new Randomizer();
 
@@ -17,6 +23,7 @@ function ScratchPage() {
 
   inputItens.querySelector("button").addEventListener("click", () => {
     createSratch(raffleMaker);
+    cleanList();
   });
 
   return inputItens;
@@ -26,8 +33,8 @@ function SecondPage() {
   const scratchPage = document.createElement("div");
   scratchPage.id = `scratchPage`;
 
-  const scratchPageSection1 = document.createElement("div")
-  scratchPageSection1.id = "scratchPageSection1"
+  const scratchPageSection1 = document.createElement("div");
+  scratchPageSection1.id = "scratchPageSection1";
   scratchPage.appendChild(scratchPageSection1);
 
   const scratchCard = createScratchCard();
@@ -35,7 +42,7 @@ function SecondPage() {
 
   const buttonReturn = Button(
     "RETURN",
-    "/src/assets/button/returnButton.svg",
+    "https://santosfabin.github.io/Randomix/src/assets/button/returnButton.svg",
     "linear-gradient(-225deg, #0ba360 0%, #3cba92 100%)",
     () => {
       document.getElementById("scratchPage").remove();

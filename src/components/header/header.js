@@ -4,15 +4,15 @@ function Header() {
   const headerContainer = document.createElement("header");
   headerContainer.id = `headerContainer`;
 
-  const pageName = document.createElement("h1");
-  pageName.innerText = `Randomix`;
+  const pageName = document.createElement("div");
+  pageName.id = "pageName";
   headerContainer.appendChild(pageName);
 
   const navContainer = document.createElement("nav");
   headerContainer.appendChild(navContainer);
 
   const navElement1 = document.createElement("div");
-  navElement1.innerText = `Home`;
+  navElement1.innerText = `Default`;
   navElement1.addEventListener("click", redirectHomePage);
   navContainer.appendChild(navElement1);
 
@@ -48,8 +48,3 @@ function redirectSlotPage() {
 }
 
 export { Header };
-
-// TEST
-
-// const test = Header();
-// document.querySelector("body").appendChild(test);
