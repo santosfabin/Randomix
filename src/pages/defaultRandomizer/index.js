@@ -29,21 +29,21 @@ function randomix(amount, actived) {
   return winner;
 }
 
-const buttonReturn = Button(
-  "RETURN",
-  "https://santosfabin.github.io/Randomix/src/assets/button/returnButton.svg",
-  "linear-gradient(-225deg, #0ba360 0%, #3cba92 100%)",
-  () => {
-    document.getElementById("random-default").remove();
-
-    document.getElementById("randomix").appendChild(DefaultPage());
-  }
-);
-
 function DefaultPage() {
-  const estruture = document.createElement("main");
-  estruture.id = "random-default";
-  estruture.innerHTML = `
+	const buttonReturn = Button(
+		"RETURN",
+		"https://santosfabin.github.io/Randomix/src/assets/button/returnButton.svg",
+		"linear-gradient(-225deg, #0ba360 0%, #3cba92 100%)",
+		() => {
+			document.getElementById("random-default").remove();
+
+			document.getElementById("randomix").appendChild(DefaultPage());
+		}
+	);
+
+	const estruture = document.createElement("main");
+	estruture.id = "random-default";
+	estruture.innerHTML = `
     <label id="how-many-default">
       <span>How many?</span>
       <input type="number" min="1" />
@@ -64,9 +64,9 @@ function DefaultPage() {
   const winnersChampionsMyFriend = document.createElement("div");
   const resetButton = document.createElement("p");
 
-  resetButton.innerText = "Reset winners";
-  resetButton.style.cursor = "pointer";
-  resetButton.id = "resetButton";
+	resetButton.innerText = "Reset winners";
+	resetButton.style.cursor = "pointer";
+	resetButton.id = "resetButton";
 
   randomizer.innerText = "Randomizer";
   randomizer.id = "button-randomizer";
@@ -128,4 +128,4 @@ function DefaultPage() {
   return inputItens;
 }
 
-export { DefaultPage };
+export { DefaultPage };
