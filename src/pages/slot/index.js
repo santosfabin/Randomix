@@ -52,8 +52,7 @@ function resetPage(containerPage) {
   randoMixDiv.appendChild(SlotPage());
 }
 
-window.addEventListener("resize", (e) => {
-  const showSlotItens = document.querySelectorAll(".showSlotItem");
+window.addEventListener("resize", () => {
   const showSlotItensLenght = document.querySelectorAll(".showSlotItem").length;
   if (showSlotItensLenght > checkScreenSize(window.innerWidth)) {
     removeSlot();

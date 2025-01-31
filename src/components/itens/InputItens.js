@@ -71,7 +71,6 @@ function getList(text, randomizer, containerTextArea, newContainer) {
 function updateTextArea(randomizer, textArea) {
   if (randomizer.list.length > 0) {
     let listString = "";
-    console.log(randomizer.list);
     randomizer.list.forEach((element, index) => {
       if (index == 0) {
         listString += element;

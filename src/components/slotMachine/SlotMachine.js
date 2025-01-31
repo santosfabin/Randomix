@@ -175,7 +175,6 @@ function starSorteio(randomizer) {
     start(end, time);
   }, time);
   let endIteration1 = -(showSlotItens.length - end);
-  let endIteration2 = -(showSlotItens.length - end);
   function start(end, time) {
     const elementsMiddle = document.querySelectorAll(".middleItem");
     const elementsAbove = document.querySelectorAll(".aboveItem");

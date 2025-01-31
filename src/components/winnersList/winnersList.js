@@ -23,7 +23,7 @@ function addWinner(winner) {
   winner.forEach((element) => {
     remenberingOldWinners.push(element);
   });
-  console.log(remenberingOldWinners);
+
   remenberingOldWinners.forEach((element, index) => {
     const winnerContainer = document.createElement("div");
     winnerContainer.className = `winnerContainer`;
@@ -65,8 +65,6 @@ function resetWinner() {
 
 function cleanList() {
   remenberingOldWinners = [];
-
-  console.log("Limpando: " + remenberingOldWinners);
 }
 
 export { WinnersList, addWinner, resetWinner, cleanList };

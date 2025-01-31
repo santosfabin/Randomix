@@ -56,7 +56,7 @@ function DefaultPage() {
     </label>
   `;
 
-  const inputItens = new InputItens(random, estruture, "Default");
+  const inputItens = InputItens(random, estruture, "Default");
   const randomizer = document.createElement("button");
   const randomizerContainer = document.createElement("div");
   const winnersList = WinnersList();
