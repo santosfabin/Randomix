@@ -8,7 +8,7 @@ import {Button} from '../../components/button/button.js'
 function SlotPage(){
     const sortear = new Randomizer()
     const containerSlotPage = document.createElement("div")
-    const inputItens = InputItens(sortear, containerSlotPage)
+    const inputItens = InputItens(sortear, containerSlotPage,"Slot")
     const slotMachine = SlotMachine(sortear)
     const winnersList = WinnersList()
     const buttonRETURN = Button(

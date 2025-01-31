@@ -28,12 +28,6 @@ function randomix(amount, actived) {
 	return winner;
 }
 
-function resetPage(containerPage) {
-	const page = DefaultPage();
-	const randoMixDiv = document.getElementById("randomix");
-	containerPage.remove();
-	randoMixDiv.appendChild(page);
-}
 
 const buttonReturn = Button(
 	"RETURN",
@@ -62,7 +56,7 @@ function DefaultPage() {
     </label>
   `;
 
-	const inputItens = new InputItens(random, estruture);
+	const inputItens = new InputItens(random, estruture, "Randomizer");
 	const randomizer = document.createElement("button");
 	const randomizerContainer = document.createElement("div");
 	const winnersList = WinnersList();
