@@ -35,7 +35,7 @@ function SecondPage() {
 
   const buttonReturn = Button(
     "RETURN",
-    "/src/assets/button/returnButton.svg",
+    "https://santosfabin.github.io/Randomix/src/assets/button/returnButton.svg",
     "linear-gradient(-225deg, #0ba360 0%, #3cba92 100%)",
     () => {
       document.getElementById("scratchPage").remove();

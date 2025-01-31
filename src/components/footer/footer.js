@@ -13,7 +13,7 @@ function Footer() {
   innerFooterSection.appendChild(innerSection)
 
   const gitHubImage = document.createElement("img");
-  gitHubImage.src = "/src/assets/footer/gitHubImage.png";
+  gitHubImage.src = "https://santosfabin.github.io/Randomix/src/assets/footer/gitHubImage.png";
   gitHubImage.alt = "Github";
   innerSection.appendChild(gitHubImage);
 
@@ -50,7 +50,7 @@ function Footer() {
   innerFooterSection.appendChild(alphaImageLink);
 
   const alphaImage = document.createElement("img");
-  alphaImage.src = "/src/assets/footer/alphaImage.png";
+  alphaImage.src = "https://santosfabin.github.io/Randomix/src/assets/footer/alphaImage.png";
   alphaImage.alt = "AplhaEdtech Site";
   alphaImageLink.appendChild(alphaImage);
 

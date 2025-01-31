@@ -29,7 +29,7 @@ function InputItens(randomizer, newContainer, title) {
 	container.appendChild(
 		Button(
 			"PLAY",
-			"/src/assets/button/playButton.svg",
+			"https://santosfabin.github.io/Randomix/src/assets/button/playButton.svg",
 			"linear-gradient(to top, #0ba360 0%, #3cba92 100%)",
 			() => {
 				getList(textArea.value, randomizer, container, newContainer);

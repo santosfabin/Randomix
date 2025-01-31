@@ -191,7 +191,7 @@ nav > div:hover {
 	top: 7px;
 	right: 7px;
 	cursor: pointer;
-	background-image: url("/src/assets/modalError/closeImage.svg");
+	background-image: url("https://santosfabin.github.io/Randomix/src/assets/modalError/closeImage.svg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
