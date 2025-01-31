@@ -47,6 +47,8 @@ function createSratch(randomizer) {
 
   winnersList = randomizer.pickValues(scratchQuantity.length);
 
+  document.getElementById("scratchSection").innerHTML = ""
+
   for (let i = 0; i < scratchQuantity.length; i++) {
     const containerScratch = document.createElement("div");
     containerScratch.className = `scratchContainer`;
