@@ -4,6 +4,7 @@ import {
   WinnersList,
   addWinner,
   resetWinner,
+  cleanList,
 } from "../../components/winnersList/winnersList.js";
 import { NotificationError } from "../../components/modalError/modalError.js";
 import { Button } from "../../components/button/button.js";
@@ -83,6 +84,10 @@ function DefaultPage() {
   estruture.appendChild(winnersChampionsMyFriend);
 
   estruture.appendChild(winnersList);
+
+  inputItens.querySelector("button").addEventListener("click", () => {
+    cleanList();
+  });
 
   resetButton.addEventListener("click", () => {
     resetWinners();

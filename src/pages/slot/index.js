@@ -2,11 +2,15 @@ import { Randomizer } from "../../utils/randomizer.js";
 import { SlotMachine } from "../../components/slotMachine/SlotMachine.js";
 import { checkScreenSize, removeSlot } from "./util.js";
 import { InputItens } from "../../components/itens/InputItens.js";
-import { WinnersList } from "../../components/winnersList/winnersList.js";
+import {
+  WinnersList,
+  resetWinner,
+  cleanList,
+} from "../../components/winnersList/winnersList.js";
 import { Button } from "../../components/button/button.js";
+const sortear = new Randomizer();
 
 function SlotPage() {
-  const sortear = new Randomizer();
   const containerSlotPage = document.createElement("div");
   const inputItens = InputItens(sortear, containerSlotPage, "Slot");
   const slotMachine = SlotMachine(sortear);
@@ -19,8 +23,12 @@ function SlotPage() {
       resetPage(containerSlotPage);
     }
   );
-  containerSlotPage.id = "SlotPage";
 
+  inputItens.querySelector("button").addEventListener("click", () => {
+    cleanList();
+  });
+
+  containerSlotPage.id = "SlotPage";
   containerSlotPage.style.display = "flex";
   containerSlotPage.style.flexDirection = "column";
   containerSlotPage.style.alignItems = "center";
