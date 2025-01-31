@@ -6,10 +6,10 @@ import { NotificationError } from "../modalError/modalError.js";
  * Creates a div that contais a textArea and a button that will call the getList function.
  *
  * @param {Randomizer} randomizer - A instance of the Randomizer class
- * @param {html Div} newContainer - The container of the page (slot-page, default-page, scratch-page)\
+ * @param {html Div} page - The container of the page (slot-page, default-page, scratch-page)\
  * @returns {html Div} A html element
  */
-function InputItens(randomizer, newContainer, title) {
+function InputItens(randomizer, page, title) {
   const container = document.createElement("div");
   const textArea = document.createElement("textarea");
 
@@ -32,7 +32,7 @@ function InputItens(randomizer, newContainer, title) {
       "https://santosfabin.github.io/Randomix/src/assets/button/playButton.svg",
       "linear-gradient(to top, #0ba360 0%, #3cba92 100%)",
       () => {
-        getList(textArea.value, randomizer, container, newContainer);
+        getList(textArea.value, randomizer, container, page);
       }
     )
   );
@@ -49,7 +49,7 @@ function InputItens(randomizer, newContainer, title) {
  * @param {html Div} containerTextArea - The container of the textArea
  * @param {html Div} newContainer - The container of the page (slot-page, default-page, scratch-page)
  */
-function getList(text, randomizer, containerTextArea, newContainer) {
+function getList(text, randomizer, containerTextArea, page) {
   let list = text.replace(", ", ",").split(",");
   list = list
     .map((element) => {
@@ -65,7 +65,8 @@ function getList(text, randomizer, containerTextArea, newContainer) {
   }
   randomizer.list = list;
   containerTextArea.remove();
-  document.getElementById("randomix").appendChild(newContainer);
+  console.log(page())
+  document.getElementById("randomix").appendChild(page());
 }
 
 function updateTextArea(randomizer, textArea) {

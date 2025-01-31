@@ -12,7 +12,6 @@ const sortear = new Randomizer();
 
 function SlotPage() {
   const containerSlotPage = document.createElement("div");
-  const inputItens = InputItens(sortear, containerSlotPage, "Slot");
   const slotMachine = SlotMachine(sortear);
   const winnersList = WinnersList();
   const buttonRETURN = Button(
@@ -24,10 +23,6 @@ function SlotPage() {
     }
   );
 
-  inputItens.querySelector("button").addEventListener("click", () => {
-    cleanList();
-  });
-
   containerSlotPage.id = "SlotPage";
   containerSlotPage.style.display = "flex";
   containerSlotPage.style.flexDirection = "column";
@@ -38,19 +33,24 @@ function SlotPage() {
   containerSlotPage.style.gap = "10px";
   containerSlotPage.style.width = "100%";
 
-  inputItens.id = "inputSlotPage";
   buttonRETURN.classList.add("buttonRETURN");
   containerSlotPage.appendChild(slotMachine);
   containerSlotPage.appendChild(buttonRETURN);
   containerSlotPage.appendChild(winnersList);
 
+  return containerSlotPage
+}
+
+function InputItensSlotPage(){
+  const inputItens = InputItens(sortear, SlotPage, "Slot");
+  inputItens.id = "inputSlotPage";
   return inputItens;
 }
 
 function resetPage(containerPage) {
   const randoMixDiv = document.getElementById("randomix");
   containerPage.remove();
-  randoMixDiv.appendChild(SlotPage());
+  randoMixDiv.appendChild(InputItensSlotPage());
 }
 
 window.addEventListener("resize", () => {
@@ -60,4 +60,4 @@ window.addEventListener("resize", () => {
   }
 });
 
-export { SlotPage };
+export { InputItensSlotPage };

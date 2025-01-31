@@ -10,6 +10,7 @@ import {
   addWinner,
   resetWinner,
 } from "../../components/winnersList/winnersList.js";
+import { NotificationError } from "../../components/modalError/modalError.js";
 
 let idInterval = null;
 
