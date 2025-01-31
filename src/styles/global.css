@@ -140,7 +140,7 @@ nav > div:hover {
 #imageContainer {
 	width: 250px;
 	height: 200px;
-	background-image: url("/src/assets/winnersList/trophiesImage.png");
+	background-image: url("https://santosfabin.github.io/Randomix/src/assets/winnersList/trophiesImage.png");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
