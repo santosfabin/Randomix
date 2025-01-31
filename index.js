@@ -14,8 +14,11 @@ app.appendChild(Footer());
 
 // header
 document.addEventListener("onstatechange", function (e) {
-	randomix.innerHTML = "";
 	const path = e.detail.path;
+	if(path == window.location.pathname){
+		return
+	}
+	randomix.innerHTML = "";
 	history.pushState({"path": path}, "", path);
 	randomix.appendChild(routerT[path]);
 });
