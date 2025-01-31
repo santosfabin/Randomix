@@ -59,7 +59,7 @@ function SlotMachine(randomizer) {
   slotContainerButtons.appendChild(
     Button(
       () => {
-        starSorteio(randomizer);
+        startDraw(randomizer);
       },
       "Spin",
       "buttonStart",
@@ -146,7 +146,7 @@ function ItemSlot(item, place) {
  *
  * @param {Randomizer} randomizer - Instance of the Randomizer class
  */
-function starSorteio(randomizer) {
+function startDraw(randomizer) {
   const showSlotItensLenght = document.querySelectorAll(".showSlotItem").length;
   const remainingSizeToPick = randomizer.remainingSizeToPick();
   if (!remainingSizeToPick) {
@@ -157,10 +157,6 @@ function starSorteio(randomizer) {
     for (let i = 0; i < showSlotItensLenght - remainingSizeToPick; i++) {
       removeSlot();
     }
-  }
-  if (idInterval) {
-    NotificationError("Spinning is happening");
-    return;
   }
   const showSlotItens = document.querySelectorAll(".showSlotItem");
   let i = 0;
@@ -187,7 +183,6 @@ function starSorteio(randomizer) {
     } else if (i == end) {
       unlockButtons();
       clearInterval(idInterval);
-      idInterval = null;
     } else {
       elementsAbove.forEach((element, index) => {
         element.style.transition = `top ${time}ms`;
