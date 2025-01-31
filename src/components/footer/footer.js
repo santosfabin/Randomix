@@ -57,7 +57,7 @@ function Footer() {
   alphaImageLink.appendChild(alphaImage);
 
   const copyrightText = document.createElement("p");
-  copyrightText.textContent = "© 2024 - All rights reserved.";
+  copyrightText.textContent = "© 2025 - All rights reserved.";
   sectionFooter.appendChild(copyrightText);
 
   return divFooter;
