@@ -14,8 +14,8 @@ const random = new Randomizer();
 function resetWinners() {
   random.resetWinners();
   resetWinner();
-  const p = document.getElementById("container-p-winners")
-  p.innerHTML = ""
+  const p = document.getElementById("container-p-winners");
+  p.innerHTML = "";
 }
 
 function randomix(amount, actived) {
@@ -32,20 +32,20 @@ function randomix(amount, actived) {
 }
 
 function DefaultPage() {
-	const buttonReturn = Button(
-		"RETURN",
-		"https://santosfabin.github.io/Randomix/src/assets/button/returnButton.svg",
-		"linear-gradient(-225deg, #0ba360 0%, #3cba92 100%)",
-		() => {
-			document.getElementById("random-default").remove();
+  const buttonReturn = Button(
+    "RETURN",
+    "https://santosfabin.github.io/Randomix/src/assets/button/returnButton.svg",
+    "linear-gradient(-225deg, #0ba360 0%, #3cba92 100%)",
+    () => {
+      document.getElementById("random-default").remove();
 
-			document.getElementById("randomix").appendChild(DefaultPage());
-		}
-	);
+      document.getElementById("randomix").appendChild(InputItensDefaultPage());
+    }
+  );
 
-	const estruture = document.createElement("main");
-	estruture.id = "random-default";
-	estruture.innerHTML = `
+  const estruture = document.createElement("main");
+  estruture.id = "random-default";
+  estruture.innerHTML = `
     <label id="how-many-default">
       <span>How many?</span>
       <input type="number" min="1" placeholder="1"/>
@@ -58,7 +58,6 @@ function DefaultPage() {
     </label>
   `;
 
-  const inputItens = InputItens(random, estruture, "Default");
   const randomizer = document.createElement("button");
   const randomizerContainer = document.createElement("div");
   const winnersList = WinnersList();
@@ -66,10 +65,10 @@ function DefaultPage() {
   const winnersChampionsMyFriend = document.createElement("div");
   const resetButton = document.createElement("p");
 
-	resetButton.innerText = "Reset winners";
-	resetButton.style.cursor = "pointer";
-	resetButton.id = "resetButton";
-  resetButton.style.color = "#ff6e6e"
+  resetButton.innerText = "Reset winners";
+  resetButton.style.cursor = "pointer";
+  resetButton.id = "resetButton";
+  resetButton.style.color = "#ff6e6e";
 
   randomizer.innerText = "Draw";
   randomizer.id = "button-randomizer";
@@ -88,10 +87,6 @@ function DefaultPage() {
 
   estruture.appendChild(winnersList);
 
-  inputItens.querySelector("button").addEventListener("click", () => {
-    cleanList();
-  });
-
   resetButton.addEventListener("click", () => {
     resetWinners();
   });
@@ -108,8 +103,7 @@ function DefaultPage() {
       const div = document.createElement("div");
       const h3 = document.createElement("h3");
       const p = document.createElement("p");
-      p.id = "container-p-winners"
-
+      p.id = "container-p-winners";
 
       div.id = "winners-container";
       h3.innerHTML = "Winner🥇";
@@ -130,7 +124,16 @@ function DefaultPage() {
     }
   });
 
+  return estruture;
+}
+
+function InputItensDefaultPage() {
+  const inputItens = InputItens(random, DefaultPage, "Default");
+  inputItens.id = "inputDefaultPage";
+  inputItens.querySelector("button").addEventListener("click", () => {
+    cleanList()
+  });
   return inputItens;
 }
 
-export { DefaultPage };
+export { InputItensDefaultPage };

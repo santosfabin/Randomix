@@ -16,20 +16,19 @@ import {
 
 const raffleMaker = new Randomizer();
 
-function ScratchPage() {
-  const mainPage = SecondPage();
+function InputItensScratchPage() {
 
-  const inputItens = InputItens(raffleMaker, mainPage, "Scratch");
+  const inputItens = InputItens(raffleMaker, ScratchPage, "Scratch");
 
   inputItens.querySelector("button").addEventListener("click", () => {
     createSratch(raffleMaker);
-    cleanList();
+    cleanList()
   });
 
   return inputItens;
 }
 
-function SecondPage() {
+function ScratchPage() {
   const scratchPage = document.createElement("div");
   scratchPage.id = `scratchPage`;
 
@@ -46,8 +45,7 @@ function SecondPage() {
     "linear-gradient(-225deg, #0ba360 0%, #3cba92 100%)",
     () => {
       document.getElementById("scratchPage").remove();
-
-      document.getElementById("randomix").appendChild(ScratchPage());
+      document.getElementById("randomix").appendChild(InputItensScratchPage());
     }
   );
   scratchPageSection1.appendChild(buttonReturn);
@@ -58,4 +56,4 @@ function SecondPage() {
   return scratchPage;
 }
 
-export { ScratchPage };
+export { InputItensScratchPage };
