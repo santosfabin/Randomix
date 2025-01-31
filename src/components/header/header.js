@@ -4,8 +4,8 @@ function Header() {
   const headerContainer = document.createElement("header");
   headerContainer.id = `headerContainer`;
 
-  const pageName = document.createElement("h1");
-  pageName.innerText = `Randomix`;
+  const pageName = document.createElement("div");
+  pageName.id = "pageName";
   headerContainer.appendChild(pageName);
 
   const navContainer = document.createElement("nav");
@@ -48,8 +48,3 @@ function redirectSlotPage() {
 }
 
 export { Header };
-
-// TEST
-
-// const test = Header();
-// document.querySelector("body").appendChild(test);
