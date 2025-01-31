@@ -25,40 +25,67 @@ body {
 	align-items: center;
 }
 
+/* FOOTER */
+
 footer {
-	margin-top: 3rem;
-	background: var(--black-background);
-	width: 100%;
-	min-height: 200px;
-	padding: 3rem;
-
-	position: absolute;
-	bottom: 0;
-
+	background-color: var(--black-background);
 	display: flex;
 	justify-content: center;
-
-	a:hover {
-		text-decoration: underline;
+	align-items: center;
+  }
+  
+  #sectionFooter {
+	display: flex;
+	flex-direction: column;
+	row-gap: 50px;
+	padding: 40px 0px 20px 0px;
+  }
+  
+  #innerFooterSection {
+	display: flex;
+	column-gap: 60px;
+  }
+  
+  #innerFooterSection > div {
+	display: flex;
+	align-items: center;
+	column-gap: 20px;
+  }
+  
+  img[src$="alphaImage.png"], img[src$="gitHubImage.png"] {
+	height: 65px;
+  }
+  
+  #innerFooterSection > div > div {
+	display: flex;
+	flex-direction: column;
+	row-gap: 5px;
+  }
+  
+  #innerFooterSection > div > div > a:hover {
+	text-decoration: underline;
+  }
+  
+  #innerFooterSection > div > a {
+	display: flex;
+	justify-content: center;
+  }
+  
+  a[href="https://www.alphaedtech.org.br/"]{
+	display: flex;
+	align-items: center;
+  }
+  
+  #sectionFooter > p {
+	text-align: center;
+	font-size: 15px;
+  }
+  
+  @media (max-width: 350px){
+	#innerFooterSection {
+	  column-gap: 40px;
 	}
-
-	.limiter {
-		width: 100%;
-		max-width: 1100px;
-		display: flex;
-		justify-content: center;
-		gap: 5rem;
-		flex-wrap: wrap;
-
-		ul {
-			margin-top: 1rem;
-			display: flex;
-			flex-direction: column;
-			gap: 0.5rem;
-			text-align: center;
-		}
-	}
-}
+  }
 
 /* header */
 #headerContainer {
