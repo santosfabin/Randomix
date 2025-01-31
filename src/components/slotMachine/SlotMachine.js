@@ -85,6 +85,10 @@ function SlotMachine(randomizer) {
       () => {
         randomizer.resetWinners();
         resetWinner();
+        const elementsMiddle = document.querySelectorAll(".middleItem");
+        elementsMiddle.forEach((element) => {
+          element.remove();
+        });
       },
       "Reset",
       "buttonRestart",
