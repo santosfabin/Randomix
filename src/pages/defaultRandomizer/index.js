@@ -1,31 +1,34 @@
-import {Randomizer} from "../../utils/randomizer.js";
-import {InputItens} from "../../components/itens/InputItens.js";
+import { Randomizer } from "../../utils/randomizer.js";
+import { InputItens } from "../../components/itens/InputItens.js";
 import {
-	WinnersList,
-	addWinner,
-	resetWinner
+  WinnersList,
+  addWinner,
+  resetWinner,
+  cleanList,
 } from "../../components/winnersList/winnersList.js";
-import {NotificationError} from "../../components/modalError/modalError.js";
-import {Button} from "../../components/button/button.js";
+import { NotificationError } from "../../components/modalError/modalError.js";
+import { Button } from "../../components/button/button.js";
 
 const random = new Randomizer();
 
 function resetWinners() {
-	random.resetWinners();
-	resetWinner();
+  random.resetWinners();
+  resetWinner();
+  const p = document.getElementById("container-p-winners")
+  p.innerHTML = ""
 }
 
 function randomix(amount, actived) {
-	if (amount == "") {
-		amount = 1;
-	}
-	const winner = random.pickValues(amount);
+  if (amount == "") {
+    amount = 1;
+  }
+  const winner = random.pickValues(amount);
 
-	if (actived == true) {
-		random.addCurrentWinners();
-	}
+  if (actived == true) {
+    random.addCurrentWinners();
+  }
 
-	return winner;
+  return winner;
 }
 
 function DefaultPage() {
@@ -55,72 +58,78 @@ function DefaultPage() {
     </label>
   `;
 
-	const inputItens = new InputItens(random, estruture, "Randomizer");
-	const randomizer = document.createElement("button");
-	const randomizerContainer = document.createElement("div");
-	const winnersList = WinnersList();
+  const inputItens = InputItens(random, estruture, "Default");
+  const randomizer = document.createElement("button");
+  const randomizerContainer = document.createElement("div");
+  const winnersList = WinnersList();
 
-	const winnersChampionsMyFriend = document.createElement("div");
-	const resetButton = document.createElement("p");
+  const winnersChampionsMyFriend = document.createElement("div");
+  const resetButton = document.createElement("p");
 
 	resetButton.innerText = "Reset winners";
 	resetButton.style.cursor = "pointer";
 	resetButton.id = "resetButton";
 
-	randomizer.innerText = "Randomizer";
-	randomizer.id = "button-randomizer";
-	randomizer.style.cursor = "pointer";
+  randomizer.innerText = "Randomizer";
+  randomizer.id = "button-randomizer";
+  randomizer.style.cursor = "pointer";
 
-	randomizerContainer.id = "randomizer-container";
-	randomizerContainer.appendChild(randomizer);
+  randomizerContainer.id = "randomizer-container";
+  randomizerContainer.appendChild(randomizer);
 
-	estruture.appendChild(randomizerContainer);
+  estruture.appendChild(randomizerContainer);
 
-	estruture.appendChild(resetButton);
+  estruture.appendChild(resetButton);
 
-	estruture.appendChild(buttonReturn);
+  estruture.appendChild(buttonReturn);
 
-	estruture.appendChild(winnersChampionsMyFriend);
+  estruture.appendChild(winnersChampionsMyFriend);
 
-	estruture.appendChild(winnersList);
+  estruture.appendChild(winnersList);
 
-	resetButton.addEventListener("click", () => {
-		resetWinners();
-	});
+  inputItens.querySelector("button").addEventListener("click", () => {
+    cleanList();
+  });
 
-	randomizer.addEventListener("click", () => {
-		try {
-			const howMany = document.querySelector("#how-many-default input").value;
-			const inputWinnersNo =
-				document.querySelector("#input-winners-no").checked;
-			const winner = randomix(howMany, inputWinnersNo);
+  resetButton.addEventListener("click", () => {
+    resetWinners();
+  });
 
-			winnersChampionsMyFriend.innerHTML = "";
+  randomizer.addEventListener("click", () => {
+    try {
+      const howMany = document.querySelector("#how-many-default input").value;
+      const inputWinnersNo =
+        document.querySelector("#input-winners-no").checked;
+      const winner = randomix(howMany, inputWinnersNo);
 
-			const div = document.createElement("div");
-			const h3 = document.createElement("h3");
-			const p = document.createElement("p");
+      winnersChampionsMyFriend.innerHTML = "";
 
-			div.id = "winners-container";
-			h3.innerHTML = "Winner🥇";
-			winner.forEach(element => {
-				const pElement = document.createElement("p");
-				pElement.innerHTML = element;
-				p.appendChild(pElement);
-			});
+      const div = document.createElement("div");
+      const h3 = document.createElement("h3");
+      const p = document.createElement("p");
+      p.id = "container-p-winners"
 
-			div.appendChild(h3);
-			div.appendChild(p);
 
-			winnersChampionsMyFriend.appendChild(div);
+      div.id = "winners-container";
+      h3.innerHTML = "Winner🥇";
+      winner.forEach((element) => {
+        const pElement = document.createElement("p");
+        pElement.innerHTML = element;
+        p.appendChild(pElement);
+      });
 
-			addWinner(winner);
-		} catch (e) {
-			NotificationError(e);
-		}
-	});
+      div.appendChild(h3);
+      div.appendChild(p);
 
-	return inputItens;
+      winnersChampionsMyFriend.appendChild(div);
+
+      addWinner(winner);
+    } catch (e) {
+      NotificationError(e);
+    }
+  });
+
+  return inputItens;
 }
 
-export {DefaultPage};
+export { DefaultPage };

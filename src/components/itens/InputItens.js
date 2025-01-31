@@ -1,6 +1,6 @@
-import {Randomizer} from "../../utils/randomizer.js";
-import {Button} from "../button/button.js";
-import {NotificationError} from "../modalError/modalError.js";
+import { Randomizer } from "../../utils/randomizer.js";
+import { Button } from "../button/button.js";
+import { NotificationError } from "../modalError/modalError.js";
 
 /**
  * Creates a div that contais a textArea and a button that will call the getList function.
@@ -10,34 +10,34 @@ import {NotificationError} from "../modalError/modalError.js";
  * @returns {html Div} A html element
  */
 function InputItens(randomizer, newContainer, title) {
-	const container = document.createElement("div");
-	const textArea = document.createElement("textarea");
+  const container = document.createElement("div");
+  const textArea = document.createElement("textarea");
 
-	updateTextArea(randomizer, textArea);
+  updateTextArea(randomizer, textArea);
 
-	container.classList.add("containerItens");
-	container.id = "containerItens";
-	textArea.classList.add("textAreaItens");
-	textArea.placeholder = "Separate items with commas";
+  container.classList.add("containerItens");
+  container.id = "containerItens";
+  textArea.classList.add("textAreaItens");
+  textArea.placeholder = "Separate items with commas";
 
-  const h1 = document.createElement("h1")
-  h1.innerText = title
+  const h1 = document.createElement("h1");
+  h1.innerText = title;
 
-  container.appendChild(h1)
+  container.appendChild(h1);
 
-	container.appendChild(textArea);
-	container.appendChild(
-		Button(
-			"PLAY",
-			"/src/assets/button/playButton.svg",
-			"linear-gradient(to top, #0ba360 0%, #3cba92 100%)",
-			() => {
-				getList(textArea.value, randomizer, container, newContainer);
-			}
-		)
-	);
+  container.appendChild(textArea);
+  container.appendChild(
+    Button(
+      "PLAY",
+      "https://santosfabin.github.io/Randomix/src/assets/button/playButton.svg",
+      "linear-gradient(to top, #0ba360 0%, #3cba92 100%)",
+      () => {
+        getList(textArea.value, randomizer, container, newContainer);
+      }
+    )
+  );
 
-	return container;
+  return container;
 }
 
 /**
@@ -50,37 +50,36 @@ function InputItens(randomizer, newContainer, title) {
  * @param {html Div} newContainer - The container of the page (slot-page, default-page, scratch-page)
  */
 function getList(text, randomizer, containerTextArea, newContainer) {
-	let list = text.replace(", ", ",").split(",");
-	list = list
-		.map(element => {
-			let item = element.trim();
-			item = item.charAt(0).toUpperCase() + item.slice(1).toLowerCase();
-			return item;
-		})
-		.filter(element => element != "");
-	list = Array.from(new Set(list));
-	if (list.length <= 1) {
-		NotificationError("Put at least two items on the list");
-		return;
-	}
-	randomizer.list = list;
-	containerTextArea.remove();
-	document.getElementById("randomix").appendChild(newContainer);
+  let list = text.replace(", ", ",").split(",");
+  list = list
+    .map((element) => {
+      let item = element.trim();
+      item = item.charAt(0).toUpperCase() + item.slice(1).toLowerCase();
+      return item;
+    })
+    .filter((element) => element != "");
+  list = Array.from(new Set(list));
+  if (list.length <= 1) {
+    NotificationError("Put at least two items on the list");
+    return;
+  }
+  randomizer.list = list;
+  containerTextArea.remove();
+  document.getElementById("randomix").appendChild(newContainer);
 }
 
 function updateTextArea(randomizer, textArea) {
-	if (randomizer.list.length > 0) {
-		let listString = "";
-		console.log(randomizer.list);
-		randomizer.list.forEach((element, index) => {
-			if (index == 0) {
-				listString += element;
-			} else {
-				listString += `, ${element}`;
-			}
-		});
-		textArea.value = listString;
-	}
+  if (randomizer.list.length > 0) {
+    let listString = "";
+    randomizer.list.forEach((element, index) => {
+      if (index == 0) {
+        listString += element;
+      } else {
+        listString += `, ${element}`;
+      }
+    });
+    textArea.value = listString;
+  }
 }
 
-export {InputItens};
+export { InputItens };

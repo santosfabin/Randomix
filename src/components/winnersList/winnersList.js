@@ -63,14 +63,8 @@ function resetWinner() {
   document.getElementById("listSection").innerHTML = "";
 }
 
-export { WinnersList, addWinner, resetWinner };
+function cleanList() {
+  remenberingOldWinners = [];
+}
 
-// // TEST
-
-// const test = WinnersList();
-// document.querySelector("body").appendChild(test);
-// document.querySelector("button").addEventListener("click", () => {
-//   resetWinner();
-// });
-
-// addWinner([1, 2, 3, 4, 1, 2, 5, 6]);
+export { WinnersList, addWinner, resetWinner, cleanList };

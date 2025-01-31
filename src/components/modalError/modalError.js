@@ -22,7 +22,3 @@ function NotificationError(message) {
 }
 
 export { NotificationError };
-
-// TEST
-
-// NotificationError("Dados Inválidos!");
