@@ -14,6 +14,8 @@ const random = new Randomizer();
 function resetWinners() {
   random.resetWinners();
   resetWinner();
+  const p = document.getElementById("container-p-winners")
+  p.innerHTML = ""
 }
 
 function randomix(amount, actived) {
@@ -105,6 +107,8 @@ function DefaultPage() {
       const div = document.createElement("div");
       const h3 = document.createElement("h3");
       const p = document.createElement("p");
+      p.id = "container-p-winners"
+
 
       div.id = "winners-container";
       h3.innerHTML = "Winner🥇";
