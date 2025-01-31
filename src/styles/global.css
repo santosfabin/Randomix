@@ -111,7 +111,7 @@ background-color: var(--black-background);
 }
 
 #pageName {
-  background-image: url("https://santosfabin.github.io/src/assets/header/full-logo.svg");
+  background-image: url("https://santosfabin.github.io/Randomix/src/assets/header/full-logo.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -194,9 +194,9 @@ nav > div:hover {
 }
 
 #imageContainer {
-  width: 250px;
-  height: 200px;
-  background-image: url("https://santosfabin.github.io/Randomix/src/assets/winnersList/trophiesImage.png");
+  width: 70px;
+  height: 70px;
+  background-image: url("https://santosfabin.github.io/Randomix/src/assets/winnersList/trophy.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
