@@ -28,19 +28,18 @@ function randomix(amount, actived) {
 	return winner;
 }
 
-
-const buttonReturn = Button(
-	"RETURN",
-	"/src/assets/button/returnButton.svg",
-	"linear-gradient(-225deg, #0ba360 0%, #3cba92 100%)",
-	() => {
-		document.getElementById("random-default").remove();
-
-		document.getElementById("randomix").appendChild(DefaultPage());
-	}
-);
-
 function DefaultPage() {
+	const buttonReturn = Button(
+		"RETURN",
+		"/src/assets/button/returnButton.svg",
+		"linear-gradient(-225deg, #0ba360 0%, #3cba92 100%)",
+		() => {
+			document.getElementById("random-default").remove();
+
+			document.getElementById("randomix").appendChild(DefaultPage());
+		}
+	);
+
 	const estruture = document.createElement("main");
 	estruture.id = "random-default";
 	estruture.innerHTML = `
@@ -66,7 +65,7 @@ function DefaultPage() {
 
 	resetButton.innerText = "Reset winners";
 	resetButton.style.cursor = "pointer";
-	resetButton.id = "resetButton"
+	resetButton.id = "resetButton";
 
 	randomizer.innerText = "Randomizer";
 	randomizer.id = "button-randomizer";
@@ -74,7 +73,6 @@ function DefaultPage() {
 
 	randomizerContainer.id = "randomizer-container";
 	randomizerContainer.appendChild(randomizer);
-
 
 	estruture.appendChild(randomizerContainer);
 
